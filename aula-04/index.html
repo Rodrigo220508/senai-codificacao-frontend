@@ -1,24 +1,100 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mini loja</title>
+    <title>Mini loja</title>
 </head>
+
 <body>
     <h1>Mini loja</h1>
-<nav> 
+    <nav>
         <ul>
-            <li><a href="produtos">Produtos</a></li>
-            <li><a href="produtos">Produtos</a></li>
-            <li><a href="produtos">Produtos</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#smartphone">Smartphone</a></li>
+            <li><a href="#camiseta">Camiseta</a></li>
+            <li><a href="#video">Vídeo do produto</a></li>
+            
         </ul>
     </nav>
 
+    <br><br> <br><br> <br><br> <br><br> <br><br> <br><br>
+    <hr>
+
     <main>
-        <section id="produtos"></section>
+        <section id="produtos">
+            <h2>Produtos</h2>
+
+            <article id="smartphone">
+                <h3>Smartphone</h3>
+                <img src="assets/iphone.jpg"
+                    alt=" smartphone laranja, com três câmeras traseiras, ao lado da tela preta com linhas abstratas em tons de laranja."
+                    width="250" height="250" loading="lazy">
+            </article>
+
+            <br><br> <br><br> <br><br>
+
+            <article id="camiseta">
+                <h3>Camiseta</h3>
+                <figure>
+                    <img src="assets/camisa.jpg"
+                        alt=" camiseta branca de manga curta e gola redonda, apresentada sobre fundo branco."
+                        width="250" height="250" loading="lazy">
+                    <figcaption>Camiseta branca - 59,90</figcaption>
+                </figure>
+            </article>
+        </section>
+        <!-- Quando o caminho ficou errado, apareceu: o alt de cada imagem -->
+
+        <br><br> <br><br> <br><br>
+
+        <section id="video">
+            <h1>Video do produto</h1>
+            <video controls width="400" preload="metadata">
+                <source src="assets/video (1).mp4" type="video/mp4">
+                Seu navegador não suporta video.
+            </video>
+        </section>
+
+        <section>
+            <h1>Descrição em áudio</h1>
+            <audio controls preload="metadata">
+                <source src="" type=""> seu navegador não suporta áudio.
+            </audio>
+        </section>
+
+        <br><br> <br><br> <br><br>
+
+        <section>
+            <h2>Conteúdo externo</h2>
+            <iframe src="https://www.youtube.com/embed/D6BUwppM-Ao" width="400" height="225"
+                title="Vídeo do JUlio Cocielo" loading="lazy" allowfullscreen>
+            </iframe>
+        </section>
+
+        <br><br><br><br><br><br><br>
+        <hr>
+
+        <!-- <img src=img/camisa.jpg alt="produto"></img> -->
+        <img src="assets/camisa.jpg" alt="Camiseta de manga curta e gola redonda, apresentada sobre fundo branco.">
+
+
+        <!--<video width="400">
+        <source src="img/video.mp4">
+        </video>-->
+        <video controls width="400" preload="metadata">
+            <source src="assets/video (1).mp4" type="video/mp4">
+            Seu navegador não suporta vídeos.
+        </video>
     </main>
-    
+
+    <br><br><br>
+    <footer>
+        <p>DESENVOLVIDO POR: RODRIGO GONÇALVES E LEONARDO DO SANTOS.
+            SENAI - FULL STACK
+        </p>
+    </footer>
 </body>
+
 </html>
