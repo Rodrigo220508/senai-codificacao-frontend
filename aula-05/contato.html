@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VDG</title>
+</head>
+
+<body>
+    <h1>VAGA DOS GURIS</h1>
+    <Nav aria-label="Menu Principal">
+        <ul>
+            <li> <a href="galeria.html">Galeria </a></li>
+            <li> <a href="contato.html">Contato </a></li>
+            <li> <a href="servicos.html">Servicos </a></li>
+        </ul>
+    </Nav>
+
+    <form>
+        <label for="nome">Nome</label>
+        <Input type="text" id="nome" name="nome" minlength="2" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="telefone">Telefone</label>
+        <input type="tel" id="telefone" min="6" max="20"  name="telefone">
+ 
+          <label for="vaga">Escolha a vaga:</label>
+    <select id="vaga" name="vaga">
+        <option value="desenvolvedor">Desenvolvedor Full Stack</option>
+        <option value="designer">Designer</option>
+        <option value="analista">Analista de Sistemas</option>
+    </select>
+
+    <br><br>
+
+    <p>Tipo de contratação:</p>
+
+    <input type="radio" id="clt" name="contratacao" value="clt">
+    <label for="clt">CLT</label>
+
+    <input type="radio" id="pj" name="contratacao" value="pj">
+    <label for="pj">PJ</label>
+
+    <input type="radio" id="estagio" name="contratacao" value="estagio">
+    <label for="estagio">Estágio</label>
+
+    <br><br>
+
+    <label for="mensagem">Mensagem:</label>
+    <textarea id="mensagem" name="mensagem" rows="5" cols="40"></textarea>
+
+    <br><br>
+
+    <button type="submit">Enviar Candidatura</button>
+</form>
+
+
+</body>
+
+</html>      
