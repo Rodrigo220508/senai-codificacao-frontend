@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de projeto para a atividade final de CSS.">
+    <title>Projeto Final - Nome do Negócio</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <!--
+        ATIVIDADE FINAL DE CSS
+        1) Escolham um tema para o site.
+        2) Troquem os textos, nomes, preços e imagens para combinar com o tema.
+        3) Mantenham as classes e os ids enquanto estiverem fazendo a atividade.
+        4) Toda a aparência deve ser feita no arquivo estilo.css.
+    -->
+
+    <header id="topo">
+        <div class="container">
+            <h1>Nome do Negócio</h1>
+            <p class="subtitulo">Uma frase curta que explique o que vocês fazem.</p>
+
+            <nav aria-label="Navegação principal">
+                <ul class="menu">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="secao hero">
+            <div class="container">
+                <p class="etiqueta">Bem-vindo</p>
+                <h2>Uma chamada principal para o negócio</h2>
+                <p>
+                    Escrevam aqui uma apresentação curta e convincente. Expliquem o principal
+                    benefício do produto, serviço ou projeto escolhido pela dupla.
+                </p>
+                <a class="botao" href="#servicos">Conhecer serviços</a>
+            </div>
+        </section>
+
+        <section id="sobre" class="secao">
+            <div class="container">
+                <h2>Sobre nós</h2>
+                <p>
+                    Contem um pouco sobre a empresa, projeto ou ideia. Este texto deve ser
+                    substituído por um conteúdo que combine com o tema escolhido.
+                </p>
+                <p>
+                    Vocês podem falar sobre objetivo, diferencial, público-alvo, história ou
+                    qualquer informação importante para apresentar o negócio.
+                </p>
+            </div>
+        </section>
+
+        <section id="servicos" class="secao">
+            <div class="container">
+                <h2>Serviços em destaque</h2>
+                <p>Personalizem os cards abaixo com serviços ou produtos do tema escolhido.</p>
+
+                <div class="lista-cards">
+                    <article class="card">
+                        <h3>Serviço 1</h3>
+                        <p class="descricao">Descrição curta do primeiro serviço ou produto.</p>
+                        <p class="preco">R$ 99,90</p>
+                        <a class="botao" href="#contato">Tenho interesse</a>
+                    </article>
+
+                    <article class="card destaque">
+                        <h3>Serviço 2</h3>
+                        <p class="descricao">Descrição curta do segundo serviço ou produto.</p>
+                        <p class="preco">R$ 149,90</p>
+                        <a class="botao" href="#contato">Tenho interesse</a>
+                    </article>
+
+                    <article class="card">
+                        <h3>Serviço 3</h3>
+                        <p class="descricao">Descrição curta do terceiro serviço ou produto.</p>
+                        <p class="preco">R$ 199,90</p>
+                        <a class="botao" href="#contato">Tenho interesse</a>
+                    </article>
+                </div>
+
+                <h3>Comparativo</h3>
+                <table border="1" class="tabela">
+                    <thead>
+                        <tr>
+                            <th>Opção</th>
+                            <th>Inclui</th>
+                            <th>Prazo</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Essencial</td>
+                            <td>Item ou benefício principal</td>
+                            <td>3 dias</td>
+                            <td>R$ 99,90</td>
+                        </tr>
+                        <tr>
+                            <td>Completo</td>
+                            <td>Mais recursos e benefícios</td>
+                            <td>5 dias</td>
+                            <td>R$ 149,90</td>
+                        </tr>
+                        <tr>
+                            <td>Premium</td>
+                            <td>Experiência completa</td>
+                            <td>7 dias</td>
+                            <td>R$ 199,90</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="galeria" class="secao">
+            <div class="container">
+                <h2>Galeria</h2>
+                <p>Troquem as imagens e legendas para combinar com o projeto de vocês.</p>
+
+                <div class="galeria">
+                    <figure class="item-galeria">
+                        <img src="https://placehold.co/600x400?text=Imagem+1" alt="Imagem ilustrativa 1">
+                        <figcaption>Legenda da primeira imagem.</figcaption>
+                    </figure>
+
+                    <figure class="item-galeria">
+                        <img src="https://placehold.co/600x400?text=Imagem+2" alt="Imagem ilustrativa 2">
+                        <figcaption>Legenda da segunda imagem.</figcaption>
+                    </figure>
+
+                    <figure class="item-galeria">
+                        <img src="https://placehold.co/600x400?text=Imagem+3" alt="Imagem ilustrativa 3">
+                        <figcaption>Legenda da terceira imagem.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="secao">
+            <div class="container">
+                <h2>Entre em contato</h2>
+                <p>Preencha o formulário para solicitar informações.</p>
+
+                <form class="formulario" action="#" method="post">
+                    <div class="grupo-formulario">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="nome@exemplo.com" required>
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="assunto">Assunto</label>
+                        <select id="assunto" name="assunto">
+                            <option value="">Selecione uma opção</option>
+                            <option value="orcamento">Orçamento</option>
+                            <option value="duvida">Dúvida</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem"></textarea>
+                    </div>
+
+                    <button class="botao" type="submit">Enviar mensagem</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <p>&copy; 2026 Nome do Negócio. Projeto acadêmico.</p>
+            <a href="#topo">Voltar ao topo</a>
+        </div>
+    </footer>
+
+</body>
+</html>
