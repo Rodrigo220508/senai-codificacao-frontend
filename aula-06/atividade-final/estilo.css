@@ -1,0 +1,152 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:  #b3d1ff ;
+    color: #000000;
+    margin: 0;
+}
+    
+button {
+    background-color: #c59d26;
+    color: white;
+    border: none;
+}ml 
+h1, h2 {
+    color: rgb(58, 58, 196); text-align:center; padding: 20px;
+}
+
+p{
+    font-size:18px; color: #000000; line-height: 1.6;
+}
+
+
+header{
+    background-color: rgba(91, 91, 255, 0.5);
+    color:white ;
+    padding: 10px;
+}
+
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.card{
+    background-color: white; border-radius: 15px;
+padding: 20px; margin: 30px;
+}
+
+.preco {
+    color: #c59d26;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.botao{
+    background-color: #c59d26;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-decoration: none;
+}
+
+#topo{
+     border-bottom: 4px solid #c59d26;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
