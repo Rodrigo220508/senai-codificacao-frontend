@@ -106,7 +106,7 @@ Página
             </div>
 
             <h3>Horários e valores</h3>
-            <table class="tabela">
+            <table border="1"   class="tabela">
                 <thead>
                     <tr>
                         <th>Aula</th>
@@ -193,17 +193,21 @@ Página
 
             <form class="formulario">
                 <div class="campo">
-                    <label for="nome">Nome</label>
+                    <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
                 </div>
 
+                <br><br>
+
                 <div class="campo">
-                    <label for="email">E-mail</label>
+                    <label for="email">E-mail:</label>
                     <input type="email" id="email" name="email" placeholder="voce@email.com" required>
                 </div>
 
+                <br><br>
+
                 <div class="campo">
-                    <label for="aula">Aula de interesse</label>
+                    <label for="aula">Aula de interesse:</label>
                     <select id="aula" name="aula">
                         <option value="pilates">Pilates Solo</option>
                         <option value="yoga">Yoga</option>
@@ -212,11 +216,16 @@ Página
                     </select>
                 </div>
 
+                <br><br>
+
                 <div class="campo">
-                    <label for="mensagem">Mensagem</label>
+                    <label for="mensagem">Mensagem:</label>
+                     <br>
                     <textarea id="mensagem" name="mensagem" rows="4"
                         placeholder="Conte um pouco sobre seu objetivo..."></textarea>
                 </div>
+
+                <br>
 
                 <button type="submit" class="botao">Enviar mensagem</button>
             </form>
