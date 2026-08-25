@@ -1,0 +1,36 @@
+:root {
+    /* cores */
+    --cor-primaria:  #2563EB;
+    --cor-secundaria: #F59E0B;
+    --cor-texto: #1F2937;
+
+     /* Tipografia */
+    --fonte-principal: Arial, sans-serif;
+
+    /* Espaçamento */
+    --espacamento-padrao: 16px;
+    
+
+     /* Bordas */
+    --raio-borda: 8px;
+
+
+}
+
+
+header {
+    background-color: #2563EB;
+}
+
+button {
+    background-color: #2563EB;
+    color: #FFFFFF;
+}
+
+.titulo {
+    color: #1F2937;
+}
+
+.preco {
+    color: #F59E0B;
+}
