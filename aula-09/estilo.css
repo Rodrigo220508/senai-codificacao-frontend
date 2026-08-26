@@ -1,36 +1,404 @@
 :root {
-    /* cores */
-    --cor-primaria:  #2563EB;
-    --cor-secundaria: #F59E0B;
-    --cor-texto: #1F2937;
+    --cor-fundo: #0B1020;
+    --cor-card: #161D33;
+    --cor-primaria: #6C63FF;
+    --cor-secundaria: #21D4FD;
+    --cor-texto: #F5F7FF;
+    --cor-texto-suave: #B8C0D9;
 
-     /* Tipografia */
     --fonte-principal: Arial, sans-serif;
+    --espacamento: 24px;
+    --raio: 12px;
+}
 
-    /* Espaçamento */
-    --espacamento-padrao: 16px;
-    
+/* =========================
+   CONFIGURAÇÕES GERAIS
+   ========================= */
 
-     /* Bordas */
-    --raio-borda: 8px;
+* {
+    box-sizing: border-box;
+}
 
+html {
+    scroll-behavior: smooth;
+}
 
+body {
+    margin: 0;
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--cor-texto);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--cor-secundaria);
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
 }
 
 
-header {
-    background-color: #2563EB;
+/* =========================
+   FASE 5 - LAYOUT GERAL
+   ========================= */
+
+.layout {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-areas:
+        "cabecalho"
+        "principal"
+        "rodape";
+
+    grid-template-rows: auto 1fr auto;
+
+    gap: 20px;
 }
 
-button {
-    background-color: #2563EB;
-    color: #FFFFFF;
+.area-header {
+    grid-area: cabecalho;
+
+    background-color: var(--cor-card);
+    padding: 20px 5%;
+
+    border-bottom: 2px solid var(--cor-primaria);
 }
 
-.titulo {
-    color: #1F2937;
+
+/* =========================
+   FASE 6 - NAVBAR
+   ========================= */
+
+.area-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 30px;
 }
 
-.preco {
-    color: #F59E0B;
+.logo {
+    color: var(--cor-secundaria);
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    gap: 24px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: var(--cor-secundaria);
+}
+
+
+/* =========================
+   FASE 5 - ÁREA PRINCIPAL
+   ========================= */
+
+.area-principal {
+    grid-area: principal;
+
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hero {
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.hero h1 {
+    max-width: 800px;
+    margin: 0 auto 15px;
+
+    color: var(--cor-texto);
+    font-size: clamp(32px, 5vw, 58px);
+    line-height: 1.1;
+}
+
+.hero p {
+    color: var(--cor-texto-suave);
+    font-size: 18px;
+}
+
+
+/* =========================
+   SEÇÕES
+   ========================= */
+
+.secao {
+    padding: 50px 0;
+}
+
+.secao h2 {
+    margin-bottom: 30px;
+    color: var(--cor-secundaria);
+}
+
+
+/* =========================
+   FASE 7 - SERVIÇOS
+   ========================= */
+
+.grade-servicos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 24px;
+}
+
+.card-servico {
+    background-color: var(--cor-card);
+    padding: 28px;
+
+    border-radius: var(--raio);
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.card-servico:hover {
+    transform: translateY(-5px);
+    background-color: #1d2745;
+}
+
+.icone {
+    width: 44px;
+    height: 44px;
+
+    fill: #B8C0D9;
+
+    transition:
+        fill 0.3s ease,
+        transform 0.3s ease;
+
+    margin-bottom: 15px;
+}
+
+.card-servico:hover .icone {
+    fill: var(--cor-secundaria);
+    transform: scale(1.2);
+}
+
+.card-servico h3 {
+    margin-bottom: 10px;
+}
+
+.card-servico p {
+    color: var(--cor-texto-suave);
+}
+
+
+/* =========================
+   FASE 8 - PORTFÓLIO
+   ========================= */
+
+.grade-portfolio {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 20px;
+}
+
+.item-portfolio {
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--cor-card);
+
+    border-radius: var(--raio);
+
+    color: var(--cor-texto);
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.item-portfolio:hover {
+    transform: scale(1.03);
+    background-color: var(--cor-primaria);
+}
+
+
+/* =========================
+   FASE 9 - COMO FUNCIONA
+   ========================= */
+
+.grade-passos {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+.passo {
+    background-color: var(--cor-card);
+    padding: 25px;
+
+    border-radius: var(--raio);
+}
+
+.numero-passo {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--cor-primaria);
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.passo p {
+    color: var(--cor-texto-suave);
+}
+
+
+/* =========================
+   FASE 10 - SOBRE
+   ========================= */
+
+.secao-sobre {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 40px;
+}
+
+.sobre-texto p {
+    color: var(--cor-texto-suave);
+}
+
+.sobre-info {
+    display: grid;
+    gap: 15px;
+}
+
+.info-item {
+    background-color: var(--cor-card);
+
+    padding: 20px;
+
+    border-radius: var(--raio);
+
+    border-left: 4px solid var(--cor-secundaria);
+}
+
+
+/* =========================
+   FASE 11 - RODAPÉ
+   ========================= */
+
+.area-rodape {
+    grid-area: rodape;
+
+    display: grid;
+
+    grid-template-columns: 1fr auto;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 25px 5%;
+
+    background-color: var(--cor-card);
+
+    border-top: 2px solid var(--cor-primaria);
+}
+
+.rodape-texto p {
+    margin: 0;
+    color: var(--cor-texto-suave);
+}
+
+.rodape-links {
+    display: flex;
+
+    gap: 20px;
+}
+
+.rodape-links a {
+    transition: color 0.3s ease;
+}
+
+.rodape-links a:hover {
+    color: var(--cor-secundaria);
+}
+
+
+/* =========================
+   FASE 12 - RESPONSIVIDADE
+   ========================= */
+
+@media (max-width: 700px) {
+
+    .area-header {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .menu {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 45px 10px;
+    }
+
+    .secao-sobre {
+        grid-template-columns: 1fr;
+    }
+
+    .grade-passos {
+        grid-template-columns: 1fr;
+    }
+
+    .area-rodape {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .rodape-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }
