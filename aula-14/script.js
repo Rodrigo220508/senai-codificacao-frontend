@@ -22,3 +22,4 @@ botao.addEventListener("click",function() {
     botao.innerText = "Texto Atualizado!"
 
 })
+
