@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#produtos {
+    background-color: rgb(97, 147, 241);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+
+}
+
+#carrinho {
+    background-color: rgb(97, 147, 241);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+
+}
+
+.produto {
+    background-color: rgb(62, 62, 252);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    background-color: rgb(191, 122, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    padding: 7px;
+    border: none;
+}
+
+button:hover {
+    background-color: rgb(157, 183, 255);
+}
+
+
+#total {
+    font-weight: bold ;
+}
+
+#finalizar {
+    background-color: rgb(80, 200, 120);
+    
+}
