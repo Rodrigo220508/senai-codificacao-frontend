@@ -1,54 +1,382 @@
+/* =========================
+VARIÁVEIS
+========================= */
+
+/* Define variáveis globais para cores, espaçamentos e bordas */
+:root {
+    --primary-color: #1e90ff; /* Cor principal do sistema */
+    --secondary-color: #e3f2fd; /* Cor secundária (fundos leves) */
+    --dark-color: #222; /* Cor escura para footer */
+    --text-color: #333; /* Cor padrão de texto */
+    --bg-color: #f4f4f4; /* Cor de fundo da página */
+
+    --spacing: 15px; /* Espaçamento padrão */
+    --radius: 8px; /* Borda arredondada padrão */
+}
+
+
+/* =========================
+RESET
+========================= */
+
+/* Remove margens e paddings padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Inclui padding e border no cálculo do tamanho */
+}
+
+
+/* =========================
+BASE
+========================= */
+
+/* Estilo geral do corpo da página */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+/* =========================
+HEADER
+========================= */
+
+/* Cabeçalho fixo no topo */
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px;
+    position: fixed; /* Fixa no topo */
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Garante que fique acima dos outros elementos */
+}
+
+/* MENU DE NAVEGAÇÃO */
+.nav-menu ul {
+    display: flex; /* Layout horizontal */
+    justify-content: center; /* Centraliza */
+    list-style: none; /* Remove marcadores */
+    flex-wrap: wrap; /* Quebra linha se necessário */
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+/* Efeito ao passar o mouse */
+.nav-menu a:hover {
+    opacity: 0.7;
+}
+
+/* Compensa o header fixo */
+main {
+    margin-top: 100px;
+}
+
+
+/* =========================
+BANNER
+========================= */
+
+/* Área de destaque da página */
+.banner {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    margin: 10px;
+    border-radius: var(--radius);
+    text-align: center;
+    animation: fadeIn 1s ease-in; /* Animação de entrada */
+}
+
+
+/* =========================
+PRODUTOS
+========================= */
+
+.products {
     padding: 20px;
 }
 
-h1 {
+/* Título centralizado */
+.products h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* GRID RESPONSIVO DE PRODUTOS */
+#product-list {
+    display: grid;
+
+    /* Cria colunas automáticas responsivas */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 20px; /* Espaçamento entre cards */
+}
+
+/* CARD DO PRODUTO */
+.product-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: var(--radius);
+    text-align: center;
+
+    /* Efeito visual */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efeito ao passar o mouse */
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* IMAGEM DO PRODUTO */
+.product-card img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* BOTÃO */
+.product-card button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+.product-card button:hover {
+    opacity: 0.8;
+}
+
+
+/* =========================
+CARRINHO
+========================= */
+
+/* Container do carrinho principal */
+.cart {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: var(--radius);
+    max-width: 500px; /* Centraliza com largura limitada */
+}
+
+/* Itens do carrinho */
+#cart-list li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+MINI CARRINHO
+========================= */
+
+/* Ícone fixo no topo */
+.mini-cart {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 2000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Contador de itens */
+#cart-count {
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    margin-left: 5px;
+}
+
+/* Dropdown do mini carrinho */
+.mini-cart-dropdown {
+    display: none; /* Oculto inicialmente */
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 220px;
+    background: white;
+    border-radius: var(--radius);
+    padding: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    color: var(--text-color);
+}
+
+/* Mostra ao passar o mouse */
+.mini-cart:hover .mini-cart-dropdown {
+    display: block;
+}
+
+/* Lista interna */
+.mini-cart-dropdown ul {
+    list-style: none;
+    padding: 0;
+    max-height: 150px;
+    overflow-y: auto; /* Scroll se necessário */
+}
+
+
+/* =========================
+SOBRE
+========================= */
+
+.about {
+    padding: 20px;
+}
+
+/* Container flexível */
+.about-content {
+    display: flex;
+    flex-direction: column; /* Empilhado vertical */
+    gap: 20px;
+}
+
+/* Cards internos */
+.promo-video,
+.location {
+    background: white;
+    padding: 20px;
+    border-radius: var(--radius);
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Textos centralizados */
+.about-title,
+.about-text {
     text-align: center;
 }
 
-#produtos {
-    background-color: rgb(97, 147, 241);
-    border-radius: 10px;
-    padding: 15px;
-    margin: 10px;
 
+/* =========================
+CONTATO
+========================= */
+
+/* Container principal */
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
 }
 
-#carrinho {
-    background-color: rgb(97, 147, 241);
-    border-radius: 10px;
-    padding: 15px;
-    margin: 10px;
-
+/* Cards do formulário e tarefas */
+.contact form,
+.todo {
+    background: white;
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
 }
 
-.produto {
-    background-color: rgb(62, 62, 252);
-    border-radius: 10px;
+/* FORMULÁRIO */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact input {
     padding: 10px;
-    margin: 5px;
+    border-radius: var(--radius);
+    border: 1px solid #ccc;
 }
 
-button {
-    background-color: rgb(191, 122, 255);
-    color: rgb(0, 0, 0);
-    border-radius: 5px;
-    padding: 7px;
+.contact button {
+    background-color: var(--primary-color);
+    color: white;
     border: none;
+    padding: 10px;
+    border-radius: var(--radius);
+    cursor: pointer;
 }
 
-button:hover {
-    background-color: rgb(157, 183, 255);
+.contact button:hover {
+    opacity: 0.8;
+}
+
+/* LISTA DE TAREFAS */
+.todo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+.todo input {
+    padding: 10px;
+    border-radius: var(--radius);
+    border: 1px solid #ccc;
+}
+
+.todo button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+/* Lista de tarefas */
+#lista-tarefas {
+    list-style: none;
+    padding: 0;
+}
+
+#lista-tarefas li {
+    background: var(--secondary-color);
+    padding: 8px;
+    border-radius: var(--radius);
 }
 
 
-#total {
-    font-weight: bold ;
+/* =========================
+FOOTER
+========================= */
+
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 
-#finalizar {
-    background-color: rgb(80, 200, 120);
-    
+
+/* =========================
+ANIMAÇÃO
+========================= */
+
+/* Animação de entrada suave */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

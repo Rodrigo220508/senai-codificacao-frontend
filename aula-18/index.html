@@ -1,45 +1,185 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
+    <!-- Define codificação de caracteres para suportar acentuação -->
     <meta charset="UTF-8">
+
+    <!-- Responsividade: adapta layout para diferentes dispositivos -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Loja da Turma</title>
-
+    <!-- Importação de folha de estilos externa -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Título exibido na aba do navegador -->
+    <title>Minha Loja Online</title>
 </head>
 
 <body>
 
-    <h1>Loja da Turma</h1>
+    <!-- Cabeçalho principal da aplicação -->
+    <header class="header">
 
-    <section id="produtos">
-        <h2>Produtos</h2>
+        <!-- Título da loja -->
+        <h1>Minha Loja Online</h1>
 
-        <div class="produto">
+        <!-- Menu de navegação com links internos (âncoras) -->
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
 
-            <h3>Camiseta</h3>
+        <!-- Mini carrinho fixo no topo -->
+        <div class="mini-cart">
 
-            <p>R$ 39,90</p>
+            <!-- Ícone do carrinho -->
+            <span>🛒</span>
 
-            <button> Adicionar ao carrinho </button>
+            <!-- Contador de itens (atualizado via JavaScript) -->
+            <span id="cart-count">0</span>
 
+            <!-- Dropdown do mini carrinho -->
+            <div class="mini-cart-dropdown" id="mini-cart-dropdown">
+
+                <!-- Lista de produtos adicionados -->
+                <ul id="mini-cart-list"></ul>
+
+                <!-- Total do carrinho -->
+                <p id="mini-total">Total: R$ 0</p>
+                
+            </div>
         </div>
+    </header>
 
-    </section>
+    <!-- Conteúdo principal -->
+    <main id="home">
 
-    <section id="carrinho">
-        <h2>Carrinho</h2>
+        <!-- Banner promocional -->
+        <section class="banner" aria-label="Destaque principal">
+            <h2>Promoções Imperdíveis</h2>
+            <p>Os melhores produtos com os melhores preços!</p>
+        </section>
 
-        <div class="lista-carrinho"></div>
+        <!-- Seção de produtos (renderização dinâmica via JavaScript) -->
+        <section id="produtos" class="products">
+            <h2>Produtos</h2>
 
-        <p>Total: R$ <span id="total">0,00</span></p>
+            <!-- Container onde os produtos são inseridos dinamicamente -->
+            <div id="product-list"></div>
+        </section>
 
-        <button id="finalizar">Finalizar compra</button>
+        <!-- Carrinho principal -->
+        <section class="cart">
+            <h2>Carrinho</h2>
 
-    </section>
+            <!-- Lista de itens do carrinho -->
+            <ul id="cart-list"></ul>
+
+            <!-- Valor total -->
+            <p id="total">Total: R$ 0</p>
+
+            <!-- Botão de finalização da compra -->
+            <button id="finalizar-compra">Finalizar Compra</button>
+
+            <!-- Mensagem de feedback (sucesso/erro) -->
+            <p id="mensagem-compra"></p>
+        </section>
+
+        <!-- Exemplo de produtos estáticos (comentado pois o projeto usa renderização dinâmica)
+        <section class="products">
+            ...
+        </section>
+        -->
+
+        <!-- Seção "Sobre a loja" -->
+        <section id="sobre" class="about">
+
+            <!-- Container flexível para vídeo e localização -->
+            <div class="about-content">
+
+                <!-- Vídeo institucional -->
+                <section class="promo-video">
+                    <h2>Conheça nossa loja</h2>
+
+                    <!-- Elemento de vídeo nativo -->
+                    <video controls width="500">
+                        <source src="img/video.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeo.
+                    </video>
+                </section>
+
+                <!-- Localização e conteúdo externo -->
+                <section class="location">
+                    <h3>Nossa Localização</h3>
+
+                    <!-- Vídeo externo via iframe -->
+                    <iframe src="https://www.youtube.com/embed/a4cA0ET9DRY?si=WXRjD9ngmuBGpHN7"
+                        width="300" height="200" title="Vídeo externo">
+                    </iframe>
+
+                    <!-- Mapa incorporado -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=..."
+                        width="300" height="200"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Maps">
+                    </iframe>
+                </section>
+            </div>
+
+            <!-- Texto institucional -->
+            <h2 class="about-title">Sobre a Loja</h2>
+            <p class="about-text">
+                Somos uma loja dedicada a oferecer produtos de qualidade com os melhores preços.
+            </p>
+        </section>
+
+        <!-- Seção de contato -->
+        <section id="contato" class="contact">
+
+            <h2>Contato</h2>
+
+            <!-- Formulário (validação via JavaScript) -->
+            <form id="formulario">
+                <input type="text" id="nome" placeholder="Nome">
+                <input type="email" id="email" placeholder="Email">
+                <button type="submit">Enviar</button>
+            </form>
+
+            <!-- Mensagem de retorno do formulário -->
+            <p id="mensagem"></p>
+
+            <!-- Lista de tarefas (exercício prático com DOM) -->
+            <section class="todo">
+                <h2>Lista de Tarefas</h2>
+
+                <!-- Campo de entrada -->
+                <input type="text" id="nova-tarefa" placeholder="Digite uma tarefa">
+
+                <!-- Botão para adicionar tarefa -->
+                <button id="adicionar">Adicionar</button>
+
+                <!-- Lista dinâmica -->
+                <ul id="lista-tarefas"></ul>
+            </section>
+
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 Minha Loja Online</p>
+    </footer>
+
+    <!-- Script JS carregado ao final para garantir que o DOM já esteja pronto -->
     <script src="script.js"></script>
+
 </body>
 
 </html>
