@@ -1,0 +1,40 @@
+<div class="formulario">
+
+  <h1>Conversor de Temperatura</h1>
+
+  <label>Temperatura em Celsius:</label>
+
+  <input
+    type="number"
+    [(ngModel)]="valor"
+  >
+
+  <div class="botoes">
+
+    <button type="button" (click)="paraFahrenheit()">
+      Para Fahrenheit
+    </button>
+
+    <button type="button" (click)="paraKelvin()">
+      Para Kelvin
+    </button>
+
+    <button type="button" (click)="paraReaumur()">
+      Para Réaumur
+    </button>
+
+    <button type="button" (click)="limpar()">
+      Limpar
+    </button>
+
+  </div>
+
+  <p *ngIf="calculado">
+    Resultado: {{ resultado }}
+  </p>
+
+  <p *ngIf="mensagemErro" class="erro">
+    {{ mensagemErro }}
+  </p>
+
+</div>
