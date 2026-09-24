@@ -1,25 +1,31 @@
-//o metodo getElementById busca no html o elemento que possui o id correspondente.
+// 1. Selecionando Elementos pelo Id
+// o método getElementById busca no html o elemento que possui o id  correspondente.
 const titulo = document.getElementById("cardTitulo");
 const descricao = document.getElementById("cardDescricao");
-const botao = document.getElementById("btnSaida");
+const botao = document.getElementById("btnSaibaMais");
 
-//Exibe os elementos selecionados no console do navegador (F12).
-console.log("Elemento do título: ", titulo);
-console.log("Elemento do botão: ", botao);
+//Exibe os elementos selecionados no console do navegador (F12)
+console.log("Elemento do título:", titulo);
+console.log("Elemento do botão:", botao);
 
+//2. Lendo e Alterando conteúdo(texto)
+//podemos ler ou alterar o texto de um elemento com .innerText ou .textContent
+console.log("Texto atual do título:", titulo.innerText);
 
-console.log("Texto atual do titulo:", titulo.innertext);
+//3. Adicionando um evento de clique com document.getElementById
+// Quando o usuario clica no botão, alteramos o conteúdo e o estilo dos elementos na pagina
+botao.addEventListener("click", function () {
+    // Alterando o texto do título
+    titulo.innerText = "JavaScript no Dom! ";
 
-
-
-botao.addEventListener("click",function() {
-    titulo.innerText = "JavaScript no Dom: ";
-
+    // Alterando o texto da descrição
     descricao.innerText = "Você clicou no botão e o texto foi alterado usando document.getElementById() com sucesso!";
 
-    titulo.style.color = "#4f46e5"
+    // Alterando o estilo CSS diretamente pelo JavaScript
+    titulo.style.color = "#4f46e5";
     botao.style.backgroundColor = "#10b981";
     botao.innerText = "Texto Atualizado!"
-
 })
+
+
 
