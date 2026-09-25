@@ -1,0 +1,76 @@
+ATIVIDADE FINAL — AVALIANDO A SEGURANÇA DE UM SISTEMA REAL
+
+Nome: Rodrigo e Leonardo
+Turma: FULL STACK
+
+1. LISTA DE RISCOS
+
+Risco 1 — Credenciais expostas
+As credenciais do banco de dados estão diretamente no código-fonte.
+Isso pode permitir acesso não autorizado ao banco.
+
+Risco 2 — Senhas armazenadas sem proteção
+As senhas dos usuários podem estar armazenadas em texto puro.
+Caso o banco seja vazado, as senhas podem ser expostas.
+
+Risco 3 — Falta de validação dos dados
+Os dados recebidos pela aplicação não possuem validação adequada.
+Isso pode permitir dados inválidos ou maliciosos no sistema.
+
+Risco 4 — Exclusão de dados sem filtro
+O uso de comandos como deleteMany({}) pode excluir todos os
+documentos de uma coleção acidentalmente.
+
+Risco 5 — Controle de acesso inadequado
+Usuários podem receber permissões maiores do que as necessárias,
+permitindo alterações ou exclusões indevidas.
+
+2. PROPOSTAS DE SOLUÇÃO
+
+Risco 1:
+Utilizar variáveis de ambiente para armazenar as credenciais e
+não colocar senhas diretamente no código-fonte.
+
+Risco 2:
+Utilizar hash de senhas com bcrypt antes de armazená-las no banco.
+
+Risco 3:
+Utilizar validação no Schema do Mongoose, verificando campos
+obrigatórios, formatos e valores permitidos.
+
+Risco 4:
+Utilizar filtros explícitos nos comandos de atualização e exclusão,
+evitando operações sem filtro.
+
+Risco 5:
+Utilizar RBAC e o princípio do menor privilégio, concedendo a cada
+usuário somente as permissões necessárias.
+
+3. ESTRATÉGIA DE SEGURANÇA
+
+A aplicação deverá utilizar controle de acesso baseado em funções
+(RBAC).
+
+DBA:
+Deve possuir permissões administrativas, como dbAdmin ou dbOwner,
+sendo utilizado somente pelo responsável pelo banco de dados.
+
+API:
+Deve possuir somente readWrite no banco e nas coleções necessárias
+para o funcionamento da aplicação. A API não deve possuir permissões
+administrativas.
+
+Analista:
+Deve possuir somente a permissão read nas coleções necessárias
+para geração de relatórios.
+
+Além disso, as credenciais devem ser armazenadas em variáveis de
+ambiente, as senhas devem utilizar hash, os dados devem ser
+validados e devem existir backups regulares.
+
+CONCLUSÃO
+
+A segurança do sistema depende de controle de acesso, proteção de
+credenciais, validação dos dados, proteção das senhas e backups.
+Essas medidas reduzem os riscos de acesso indevido, vazamento,
+manipulação e perda de dados.

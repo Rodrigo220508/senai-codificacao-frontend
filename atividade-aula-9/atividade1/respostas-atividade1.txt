@@ -1,0 +1,26 @@
+ATIVIDADE 1 — IDENTIFICAR RISCOS
+
+1. Credenciais expostas no código
+A string de conexão do MongoDB contém usuário e senha diretamente no código-fonte.
+Isso pode permitir que pessoas não autorizadas obtenham acesso ao banco.
+
+2. Senhas armazenadas em texto puro
+A senha do usuário é salva diretamente no banco, sem utilização de hash.
+O correto é utilizar uma função de hash, como bcrypt.
+
+3. Ausência de validação de entrada
+Os dados recebidos pelo usuário não possuem validações adequadas.
+Isso pode permitir o envio de dados inválidos ou maliciosos.
+
+4. Consulta utilizando dados diretamente da requisição
+O código utiliza req.query diretamente no filtro do MongoDB.
+Isso pode permitir manipulações indevidas dos critérios da consulta.
+
+5. Exclusão sem filtro
+O comando deleteMany({}) não possui filtro.
+Ele pode excluir todos os usuários da coleção.
+
+CONCLUSÃO:
+As principais vulnerabilidades encontradas são exposição de credenciais,
+armazenamento inseguro de senhas, falta de validação de entrada,
+consultas sem proteção adequada e exclusão de dados sem filtro.

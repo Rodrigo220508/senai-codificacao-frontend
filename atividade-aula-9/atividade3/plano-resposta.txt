@@ -1,0 +1,39 @@
+ATIVIDADE 3 — PLANO DE RESPOSTA A UM VAZAMENTO
+
+Cenário:
+Uma empresa identificou um vazamento de dados de usuários.
+
+PLANO DE AÇÃO — PRIMEIRAS 24 HORAS
+
+1. Identificar e conter o incidente
+Verificar como ocorreu o vazamento e limitar imediatamente o acesso
+ao sistema ou banco de dados comprometido.
+
+2. Trocar as credenciais
+Alterar as senhas dos usuários do banco, chaves de acesso e outras
+credenciais que possam ter sido expostas.
+
+3. Auditar os acessos
+Verificar os registros e logs para identificar quais dados foram
+acessados, alterados ou retirados.
+
+4. Notificar os responsáveis
+Comunicar a equipe responsável pela segurança e os responsáveis
+pelo sistema sobre o incidente.
+
+5. Comunicar os usuários afetados
+Informar os usuários que possam ter sido afetados pelo vazamento,
+explicando quais medidas foram tomadas.
+
+6. Corrigir a vulnerabilidade
+Após identificar a causa, aplicar as correções necessárias para evitar
+que o mesmo problema aconteça novamente.
+
+7. Fazer uma análise de segurança
+Revisar as configurações de acesso, credenciais, validações,
+proteção das senhas e demais práticas de segurança do sistema.
+
+CONCLUSÃO:
+O objetivo das primeiras 24 horas é conter o incidente, proteger
+novamente os acessos, descobrir a extensão do vazamento, comunicar
+os envolvidos e corrigir a vulnerabilidade.
